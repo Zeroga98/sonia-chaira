@@ -1,16 +1,10 @@
-app.controller('homeCtrl', function($scope, homeService, $state, $rootScope, $ionicSlideBoxDelegate ) {
+app.controller('homeCtrl', function($scope, homeService, $state, $rootScope, $ionicSlideBoxDelegate,$ionicActionSheet,$location) {
   console.log("entro");
   $rootScope.data =JSON.parse(localStorage.getItem("Data"));
   console.log($rootScope.data);
 
 
-  nota=[
-    {titulo: "nota 1" , descripcion:''},
-    {titulo: "nota 2" , descripcion:''},
-    {titulo: "nota 3" , descripcion:''},
-    {titulo: "nota 4" , descripcion:''},
-    {titulo: "nota 5" , descripcion:''}
-  ];
+  nota=[ ];
 
   $rootScope.note=[];
   $scope.week = [
@@ -114,5 +108,33 @@ app.controller('homeCtrl', function($scope, homeService, $state, $rootScope, $io
   }
   $rootScope.materias();
   $rootScope.semana();
+
+  $scope.showActionsheet = function() {
+
+   $ionicActionSheet.show({
+     titleText: 'ActionSheet Example',
+     buttons: [
+       { text: '<i class="icon ion-share"></i> Share' },
+       { text: '<i class="icon ion-arrow-move"></i> Move' },
+     ],
+     destructiveText: 'Delete',
+     cancelText: 'Cancel',
+     cancel: function() {
+       console.log('CANCELLED');
+     },
+     buttonClicked: function(index) {
+       console.log('BUTTON CLICKED', index);
+       return true;
+     },
+     destructiveButtonClicked: function() {
+       console.log('DESTRUCT');
+       return true;
+     }
+   });
+ };
+ $scope.next = function() {
+
+     $ionicSlideBoxDelegate.$getByHandle('modalhandle').next();
+   };
 
 });

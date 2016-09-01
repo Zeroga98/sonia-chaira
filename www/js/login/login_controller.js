@@ -22,8 +22,6 @@ app.controller('loginController', function($scope, $location, $auth, $rootScope)
 
 
           $rootScope.data = JSON.parse(localStorage.getItem("Data"));
-          $rootScope.semana();
-        
         console.log(data.data.data);
         $location.path("/home");
         repit = false;

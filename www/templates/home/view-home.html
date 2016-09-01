@@ -1,4 +1,9 @@
-<ion-view view-title="Home">
+
+<ion-view view-title="Sonia" >
+
+  <div class="buttons">
+    <button class="button">Right Button</button>
+  </div>
   <ion-content>
 
     <div class="item item-divider ca">
@@ -55,15 +60,15 @@
       </div>
 
 
-        <ion-slide-box  show-pager="false" scroll="false" >
+        <ion-slide-box  show-pager="false" scroll="false" delegate-handle="modalhandle">
           <ion-slide  ng-repeat="w in note " >
-            <div class="item item-divider">
-    <a class="ion-arrow-left-c"></a>
-<span>  {{w.materias.name}}</span>
-    <a class="ion-arrow-right-c"></a>
+            <div class="item item-divider" style="text-align: center" >
+    <a ng-href="#/{{w.materias.id}}/edit" class="ion-plus-circled" style="float:left; font-size:20px"></a>
+          <span style="padding-right: 14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{w.materias.name}}</span>
+    <a class="ion-arrow-right-c" style="float:right"  ng-click="next()" ></a>
 
             </div>
-            <br>
+
             <ion-list  >
 
               <ion-item class="item-icon-right " ng-repeat="n in note[$index].notes "  type="item-text-wrap">
