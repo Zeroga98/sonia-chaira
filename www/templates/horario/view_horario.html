@@ -1,0 +1,17 @@
+
+<div class="modal-header">
+      <h3 class="modal-title">{{StpaModalCtrl.scope.day}}</h3>
+</div>
+<div class="modal-body my-own-template-class">
+
+  <div class="list " >
+    <div  ng-repeat="clases in StpaModalCtrl.scope.value">
+      <div class="item item-avatar">
+      <ionic-letter-avatar data="{{clases.nameM}}" charcount="3" fontsize="20px" shape="round" ></ionic-letter-avatar>
+      <h2>{{clases.nameM}}</h2>
+      <p>{{clases.hour}}</p>
+      </div>
+      </div>
+    </div>
+
+</div>

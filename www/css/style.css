@@ -1,0 +1,37 @@
+/* Empty. Add your own CSS if you like */
+.cir {
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+     }
+.img {
+  width: 200px;
+  height: auto;
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0 auto;
+  top: 6em;
+}
+.login{
+width: auto;;
+height: 30%;
+background: rgba(0, 0, 0, 0.05);
+position: relative;
+top: 120px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+
+}
+.inputLogin{
+  top:6em;
+  width75%;
+}
+.btnLogin{
+position:absolute;
+top:25%;
+left: 35%;
+}
+.modal{
+  background-color: rgba(255, 255, 255, 0);
+}

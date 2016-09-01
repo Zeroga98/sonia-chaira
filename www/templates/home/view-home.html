@@ -1,0 +1,88 @@
+<ion-view view-title="Home">
+  <ion-content>
+
+    <div class="item item-divider ca">
+      <h2 class="centertext">Horario<h2>
+      </div>
+
+      <div class="padding">
+        <ion-slide-box  show-pager="false" >
+          <ion-slide ng-repeat="w in week " ng-if="$index%2==0">
+
+            <div class="button-bar">
+              <div class="item item-body">
+
+                <my-modal style="background-color: #caafaf"
+                      name="{{w.day}}"
+                      template="templates/horario/view_horario.html"
+                      scope= w
+                      size="md">
+
+                     <ionic-letter-avatar data="{{w.day}}" charcount="3" height="150" width="150" ></ionic-letter-avatar>
+                </my-modal>
+
+
+                <p>
+                {{w.day}}
+                </p>
+                <p>
+                  <a href="#" class="subdued">{{w.value.length}}  Materias</a>
+                  <a href="#" class="subdued">5 notas</a>
+                </p>
+              </div>
+              <div class="item item-body" ng-show="$index!=6">
+
+                <my-modal
+                      name="{{week[$index+1].day}}"
+                      template="templates/horario/view_horario.html"
+                      scope=week[$index+1]
+                      size="lg">
+                      <ionic-letter-avatar data="{{week[$index+1].day}}" charcount="3" height="150" width="150" ></ionic-letter-avatar>
+                </my-modal>
+
+
+                <p>
+                {{week[$index+1].day}}
+                </p>
+                <p>
+                  <a href="#" class="subdued">{{week[$index+1].value.length}} Materias</a>
+                  <a href="#" class="subdued">5 Notas </a>
+                </p>
+              </div>
+            </div>
+          </ion-slide>
+</ion-slide-box>
+      </div>
+
+
+        <ion-slide-box  show-pager="false" scroll="false" >
+          <ion-slide  ng-repeat="w in note " >
+            <div class="item item-divider">
+    <a class="ion-arrow-left-c"></a>
+<span>  {{w.materias.name}}</span>
+    <a class="ion-arrow-right-c"></a>
+
+            </div>
+            <br>
+            <ion-list  >
+
+              <ion-item class="item-icon-right " ng-repeat="n in note[$index].notes "  type="item-text-wrap">
+      <my-modal
+            name="sebas"
+            template="templates/note/view_modalNote.html"
+            scope="vm"
+            size="lg">
+            <h2 class="ion-ios-compose-outline"> {{n.titulo}}</h2>
+            <p >josdf</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+
+      </my-modal>
+      </ion-item>
+      </ion-list>
+      </ion-slide>
+      </ion-slide-box>
+
+
+  </ion-content>
+
+</ion-view>

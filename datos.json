@@ -1,0 +1,154 @@
+{
+  "nameStudent": "SEBASTIAN  ROJAS GARZON",
+  "codeStudent": "1420071430",
+  "program": "INGENIERIA DE SISTEMAS Completa u Ordinaria",
+  "period": "2016 - 2",
+  "listTeachers": [
+    {
+      "id": "75065899",
+      "name": "CESAR AUGUSTO LOPEZ OSORIO"
+    },
+    {
+      "id": "17634609",
+      "name": "ELIO FABIO SANCHEZ TRUJILLO"
+    },
+    {
+      "id": "1117514531",
+      "name": "LEIDY VANESSA CARVAJAL BELTRÁN"
+    },
+    {
+      "id": "1117504800",
+      "name": "LUIS ALBERTO MUÑOZ ESPAÑA"
+    },
+    {
+      "id": "6427134",
+      "name": "OCTAVIO  VILLA PELAEZ"
+    },
+    {
+      "id": "40775393",
+      "name": "RUTH DARY ESCOBAR SARRIA"
+    }
+  ],
+  "schedule": [
+    {
+      "id": "72020303",
+      "group": "ING. SISTEMAS GRUPO ",
+      "name": "MATEMÁTICAS DISCRETA",
+      "resource": [
+        {
+          "day": "Lunes",
+          "hour": "08:00 - 09:59",
+          "teacher": "12:00 - 12:59",
+          "resource": "7201"
+        },
+        {
+          "day": "Miercoles",
+          "hour": "08:00 - 09:59",
+          "teacher": "Elio Fabio Sanchez Trujillo",
+          "resource": "7201"
+        }
+      ]
+    },
+    {
+      "id": "72020501",
+      "group": "ING. SISTEMAS GRUPO 1",
+      "name": "INGENIERÍA DE REQUISITOS",
+      "resource": [
+        {
+          "day": "Lunes",
+          "hour": "15:00 - 17:59",
+          "teacher": "Ruth Dary Escobar Sarria",
+          "resource": "7205"
+        },
+        {
+          "day": "Jueves",
+          "hour": "10:00 - 11:59",
+          "teacher": "Ruth Dary Escobar Sarria",
+          "resource": "7206"
+        }
+      ]
+    },
+    {
+      "id": "72020503",
+      "group": "ING. SISTEMAS GRUPO1",
+      "name": "MÉTODOS NUMÉRICOS",
+      "resource": [
+        {
+          "day": "Lunes",
+          "hour": "10:00 - 11:59",
+          "teacher": "Elio Fabio Sanchez Trujillo",
+          "resource": "7204"
+        },
+        {
+          "day": "Miercoles",
+          "hour": "10:00 - 11:59",
+          "teacher": "Elio Fabio Sanchez Trujillo",
+          "resource": "7204"
+        }
+      ]
+    },
+    {
+      "id": "72020504",
+      "group": "ING. SISTEMAS GRUPO 2",
+      "name": "DISEÑO DE BASE DE DATOS",
+      "resource": [
+        {
+          "day": "Lunes",
+          "hour": "06:00 - 07:59",
+          "teacher": "Luis Alberto Muñoz España",
+          "resource": "7204"
+        },
+        {
+          "day": "Miercoles",
+          "hour": "06:00 - 07:59",
+          "teacher": "Luis Alberto Muñoz España",
+          "resource": "7204"
+        },
+        {
+          "day": "Jueves",
+          "hour": "06:00 - 07:59",
+          "teacher": "Luis Alberto Muñoz España",
+          "resource": "7201"
+        }
+      ]
+    },
+    {
+      "id": "9900004",
+      "group": "CIENCIAS SOCIALES",
+      "name": "DESARROLLO HUMANO",
+      "resource": [
+        {
+          "day": "Lunes",
+          "hour": "21:46 - 22:31",
+          "teacher": "Cesar Augusto Lopez Osorio",
+          "resource": "1104"
+        },
+        {
+          "day": "Jueves",
+          "hour": "20:14 - 22:31",
+          "teacher": "Cesar Augusto Lopez Osorio",
+          "resource": "1104"
+        }
+      ]
+    },
+    {
+      "id": "9900005",
+      "group": "1",
+      "name": "UNIVERSIDAD REGION Y MEDIO AMBIENTE",
+      "resource": [
+        {
+          "day": "Martes",
+          "hour": "08:00 - 09:59",
+          "teacher": "Octavio Villa Pelaez",
+          "resource": "5105"
+        },
+        {
+          "day": "Viernes",
+          "hour": "14:00 - 15:59",
+          "teacher": "Octavio Villa Pelaez",
+          "resource": "3113"
+        }
+      ]
+    }
+  ]
+}

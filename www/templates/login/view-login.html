@@ -1,0 +1,39 @@
+
+<ion-view view-title="Sonia" class="col col-center"  >
+  <ion-nav-bar class="bar bar-header bar-balanced" style="background-color:#efebe">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <form name="loginForm" novalidate >
+    <ion-content scroll="false">
+
+      <img src="img/LogoUA.png" class="img">
+
+      <div class="list padding">
+
+        <div class="list inputLogin">
+          <label class="item item-input item-floating-label">
+				    <span class="input-label">Usuario</span>
+				    <input ng-model="user.user" type="text" placeholder="Usuario">
+				  </label>
+          <label class="item item-input item-floating-label">
+				    <span class="input-label">Contraseña</span>
+				    <input ng-model= "user.password" type="password" placeholder="Contraseña">
+				  </label>
+        </div>
+
+        <a ng-if="user.user != undefined && error.length != 0" class="assertive">{{error}}</a>
+        <a ng-if="conexion !=undefined" class="assertive">{{conexion}}</a>
+
+      </div>
+      <div class="login">
+        <button ng-disabled="!valid()" ng-click="login(user)" class="button button-outline button-balanced btnLogin">
+			Iniciar Sesi&oacute;n
+			</button>
+      </div>
+      <span style="position:relative; top:2em; left:35%; color:rgb(162, 162, 162)">Uniamazonia 2016</span>
+    </ion-content>
+  </form>
+
+
+</ion-view>
