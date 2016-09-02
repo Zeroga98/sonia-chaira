@@ -7,7 +7,7 @@ var app = angular.module('starter', [
 ]);
 
 //var api_url='http://localhost:9998';
-var api_url=  'http://a2e6f8d8.ngrok.io'   
+var api_url='http://1c52502b.ngrok.io' ;
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -38,7 +38,7 @@ app.run(function($ionicPlatform) {
     abstract: true,
 
       templateUrl: 'templates/side_menu/view_side_menu.html',
-      controller: 'homeCtrl'
+
 
   })
 

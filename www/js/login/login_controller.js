@@ -1,11 +1,13 @@
-app.controller('loginController', function($scope, $location, $auth, $rootScope) {
+app.controller('loginController', function($scope, $location, $auth, $rootScope,$ionicHistory,$state) {
   $scope.user = {
     user: "",
     password: ""
   };
+// $cordovaStatusbar.styleHex('#15db0b');
   var repit = false;
   $scope.loading = false;
   $scope.login = function(user) {
+  
     if (!repit && $scope.valid()) {
       repit = true;
       $scope.loading = true;
@@ -21,9 +23,8 @@ app.controller('loginController', function($scope, $location, $auth, $rootScope)
         // if(data.satus==200; )esle (por puto data.data)
 
 
-          $rootScope.data = JSON.parse(localStorage.getItem("Data"));
-        console.log(data.data.data);
-        $location.path("/home");
+        $ionicHistory.clearCache().then(function(){ $state.go('main.home');});
+      //  $location.path("/home");
         repit = false;
       }).catch(function(error) {
         $scope.loading = false;

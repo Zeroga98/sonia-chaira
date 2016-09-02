@@ -61,26 +61,27 @@
 
 
         <ion-slide-box  show-pager="false" scroll="false" delegate-handle="modalhandle">
-          <ion-slide  ng-repeat="w in note " >
+          <ion-slide  ng-repeat="subject in subjects " >
             <div class="item item-divider" style="text-align: center" >
-    <a ng-href="#/{{w.materias.id}}/edit" class="ion-plus-circled" style="float:left; font-size:20px"></a>
-          <span style="padding-right: 14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{w.materias.name}}</span>
+    <a ng-href="#/{{subject.id}}/edit" class="ion-plus-circled" style="float:left; font-size:20px"></a>
+          <span style="padding-right: 14px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap">{{subject.name}}</span>
     <a class="ion-arrow-right-c" style="float:right"  ng-click="next()" ></a>
 
             </div>
 
             <ion-list  >
 
-              <ion-item class="item-icon-right " ng-repeat="n in note[$index].notes "  type="item-text-wrap">
+              <ion-item class="item-icon-right " ng-repeat="note in subject.notes.notes"  type="item-text-wrap">
+
       <my-modal
             name="sebas"
             template="templates/note/view_modalNote.html"
             scope="vm"
             size="lg">
-            <h2 class="ion-ios-compose-outline"> {{n.titulo}}</h2>
-            <p >josdf</p>
-            <i class="icon ion-chevron-right icon-accessory"></i>
+            <h2 class="ion-ios-compose-outline"> {{note.title}}</h2>
 
+            <p >{{note.description}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
       </my-modal>
       </ion-item>
       </ion-list>

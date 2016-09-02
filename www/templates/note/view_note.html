@@ -6,26 +6,19 @@
 
         <div class="item item-input-inset">
           <label class="item-input-wrapper">
-              <input type="text"  placeholder="Titulo">
+              <input ng-model="title" type="text"  placeholder="Titulo">
           </label>
         </div>
 
           <div class="item-input">
-            <textarea >"hoasdf"</textarea>
+            <textarea ng-model="description" >"hoasdf"</textarea>
           </div>
         </div>
+        <div class="button-bar">
+  <a class="button button-asertive">cancelar</a>
+  <a class="button"  ng-click="saveNota(title,description)">guardar</a>
+</div>
     </ion-content>
-    <ion-content class="has-footer">
 
-</ion-content>
-<ion-footer-bar align-title="left" class="bar-stable">
-  <div class="buttons">
-    <button class="button button-assertive">Cancelar</button>
-  </div>
-  <h1 class="title"></h1>
-  <div class="buttons" ng-click="doSomething()">
-    <button class="button button-calm">Guardar</button>
-  </div>
-</ion-footer-bar>
   </ion-view>
   </div>
