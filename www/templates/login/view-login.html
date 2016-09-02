@@ -1,38 +1,33 @@
-<ion-view view-title="Sonia" class="col col-center">
-  <ion-nav-bar class="bar bar-header bar-balanced" style="background-color:#efebe">
+
+<ion-view  view-title="Trémolo">
+  <ion-nav-bar align-title="center" class="bar bar-header bar-positive" style="background-color:#efebe">
 
   </ion-nav-bar>
-  <form name="loginForm" novalidate>
-    <ion-content scroll="false">
+  <form name="loginForm" novalidate >
+  <ion-content style="z-index: 1">
+    <ion-list>
+      <div class="text-center">
+        <img src="img/LogoUA.svg" alt="logo" class="width-150-px top-30-pc" /></div>
+      <div class="list">
+        <h5 class="color-white text-center cursive">Universidad de la Amazonia</h5>
+        <label ng-model="user.user"class="item item-input item-floating-label">
+            <span class="input-label">Usuario</span>
+            <input ng-model="user.user" type="text" placeholder="Usuario">
+      </label>
+        <label class="item item-input item-floating-label">
+        <span class="input-label">Contraseña</span>
+        <input ng-model= "user.password" type="password" placeholder="Contraseña">
+      </label>
 
-      <img src="img/LogoUA.png" class="img">
-
-      <div class="list padding">
-
-        <div class="list inputLogin">
-          <label class="item item-input item-floating-label">
-				    <span class="input-label">Usuario</span>
-				    <input ng-model="user.user" type="text" placeholder="Usuario">
-				  </label>
-          <label class="item item-input item-floating-label">
-				    <span class="input-label">Contraseña</span>
-				    <input ng-model= "user.password" type="password" placeholder="Contraseña">
-				  </label>
-        </div>
-
-        <a ng-if="user.user != undefined && error.length != 0" class="assertive">{{error}}</a>
-        <a ng-if="conexion !=undefined" class="assertive">{{conexion}}</a>
-
-      </div>
-      <div class="login">
-        <button ng-disabled="!valid()" ng-click="login(user)" class="button button-outline button-balanced btnLogin">
-		    	Iniciar Sesi&oacute;n
-			</button>
+        <button ng-disabled="!valid()"  ng-click="login(user)" class=" centerButton button button-outline button-balanced" >
+                    Iniciar sesión
+                </button>
+                <div class=" text-center ">
+                <ion-spinner icon="spiral"  ng-if="loading"></ion-spinner>
+                </div>
 
       </div>
-      <div style="position:relative; top:2em; left:35%; color:rgb(162, 162, 162)">Uniamazonia 2016</div>
-    </ion-content>
+    </ion-list>
   </form>
-
-
+  </ion-content>
 </ion-view>

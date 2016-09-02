@@ -2,11 +2,11 @@
     <h3 class="modal-title">{{StpaModalCtrl.setting.name}}</h3>
 </div>
 <div class="modal-body my-own-template-class">
-<p>do your best here</p>
-<p>hello world, today is <strong>{{StpaModalCtrl.scope.date}}</strong>.</p>
-<p>you can pass custom objects to template by the scope param in directive</p>
+<h3>{{StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].title}}</h3>
+<p>{{StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].description}}</p>
+
 </div>
-<div class="modal-footer">
-    <button class="btn btn-primary" ng-click="StpaModalCtrl.accept()">OK</button>
-    <button class="btn btn-warning" ng-click="StpaModalCtrl.cancel()">Cancel</button>
+<div ng-controller="noteCtrl" class="modal-footer">
+    <button class="btn btn-primary" ng-click="StpaModalCtrl.accept()">atras</button>
+    <button class="btn btn-warning" ng-click="deleteNota({{StpaModalCtrl.scope[1]}},{{StpaModalCtrl.scope[0].id}})">Borrar</button>
 </div>

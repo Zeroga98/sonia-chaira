@@ -1,5 +1,4 @@
-
-<ion-view view-title="Sonia" >
+<ion-view view-title="Trémolo">
 
   <div class="buttons">
     <button class="button">Right Button</button>
@@ -15,7 +14,7 @@
           <ion-slide ng-repeat="w in week " ng-if="$index%2==0">
 
             <div class="button-bar">
-              <div class="item item-body">
+              <div class="item item-body" style="padding-left: 8px;">
 
                 <my-modal style="background-color: #caafaf"
                       name="{{w.day}}"
@@ -32,17 +31,17 @@
                 </p>
                 <p>
                   <a href="#" class="subdued">{{w.value.length}}  Materias</a>
-                  <a href="#" class="subdued">5 notas</a>
+
                 </p>
               </div>
-              <div class="item item-body" ng-show="$index!=6">
+              <div class="item item-body" style="padding-left: 8px;" ng-show="$index!=6">
 
                 <my-modal
                       name="{{week[$index+1].day}}"
                       template="templates/horario/view_horario.html"
                       scope=week[$index+1]
                       size="lg">
-                      <ionic-letter-avatar data="{{week[$index+1].day}}" charcount="3" height="150" width="150" ></ionic-letter-avatar>
+                      <ionic-letter-avatar data="{{week[$index+1].day}}"  charcount="3" height="150" width="150" ></ionic-letter-avatar>
                 </my-modal>
 
 
@@ -51,7 +50,6 @@
                 </p>
                 <p>
                   <a href="#" class="subdued">{{week[$index+1].value.length}} Materias</a>
-                  <a href="#" class="subdued">5 Notas </a>
                 </p>
               </div>
             </div>
@@ -70,18 +68,21 @@
             </div>
 
             <ion-list  >
+      <ion-item class="item-icon-right "  style="text-align:center"ng-if="subject.notes.notes.length==undefined" type="item-text-wrap">
+        <a ng-href="#/{{subject.id}}/edit" class="ion-ios-compose-outline">Agregar Nota nueva</a>
 
-              <ion-item class="item-icon-right " ng-repeat="note in subject.notes.notes"  type="item-text-wrap">
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
 
+      <ion-item class="item-icon-right " ng-repeat="note in subject.notes.notes"  type="item-text-wrap">
       <my-modal
-            name="sebas"
+            name="{{subject.name}}"
             template="templates/note/view_modalNote.html"
-            scope="vm"
+            scope=[subject,$index]
             size="lg">
             <h2 class="ion-ios-compose-outline"> {{note.title}}</h2>
-
-            <p >{{note.description}}</p>
-            <i class="icon ion-chevron-right icon-accessory"></i>
+      <p>{{note.description}}</p>
+      <i class="icon ion-chevron-right icon-accessory"></i>
       </my-modal>
       </ion-item>
       </ion-list>

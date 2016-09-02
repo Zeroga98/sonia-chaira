@@ -7,8 +7,9 @@ var app = angular.module('starter', [
 ]);
 
 //var api_url='http://localhost:9998';
-var api_url='http://1c52502b.ngrok.io' ;
-app.run(function($ionicPlatform) {
+var api_url= 'http://e9b4b583.ngrok.io';
+
+app.run(['$ionicPlatform', function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -18,8 +19,14 @@ app.run(function($ionicPlatform) {
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
+      if (cordova.platformId == 'android') {
+            StatusBar.backgroundColorByHexString("#387ef5");
+
+
+    }
   });
-})
+}])
+
 
 .config(function($stateProvider, $urlRouterProvider,$authProvider) {
   $authProvider.loginUrl = api_url + '/user/login';

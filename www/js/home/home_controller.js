@@ -97,7 +97,7 @@ app.controller('homeCtrl', function($scope, homeService, $state, $rootScope, $io
   description:"hodasf"}];
 
   $rootScope.materias= function(){
-    $scope.subjects=[];
+    $rootScope.subjects=[];
       for (var i = 0; i < $rootScope.data.schedule.length; i++) {
         $scope.subjects.push({
         name:$rootScope.data.schedule[i].name,
@@ -109,12 +109,14 @@ app.controller('homeCtrl', function($scope, homeService, $state, $rootScope, $io
       }
 
   }
+
   $rootScope.showActionsheet = function() {
 
     $ionicActionSheet.show({
+
       titleText: 'Opciones',
       buttons: [{
-        text: '<i class="icon ion-share"></i> {{data.nameStudent}}'
+        text:'<i class="icon ion-ios-person"></i>'+$rootScope.data.nameStudent
       }, {
         text: '<i class="icon ion-arrow-move"></i> Acerca de'
       }, ],

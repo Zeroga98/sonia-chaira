@@ -1,6 +1,7 @@
 
-<div class="modal-header">
-      <h3 align-title="center"  class="modal-title">{{StpaModalCtrl.scope.day}}</h3>
+<div class="modal-header ">
+      <h3  style="clear:both , float:left"  class="modal-title">{{StpaModalCtrl.scope.day}}</h3>
+      <button style="position:absolute; right:15px; top:5px; font-size:30px; color:#387ef5"  class="button button-icon ion-chevron-up" ng-click="StpaModalCtrl.accept()"></button>
 </div>
 <div class="modal-body my-own-template-class">
 
@@ -10,6 +11,7 @@
       <ionic-letter-avatar data="{{clases.nameM}}" charcount="3" fontsize="20px" shape="round" ></ionic-letter-avatar>
       <h2>{{clases.nameM}}</h2>
       <p>{{clases.hour}}</p>
+      <p>{{clases.resource}}</p>
       </div>
       </div>
     </div>
