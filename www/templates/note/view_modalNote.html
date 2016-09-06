@@ -7,6 +7,7 @@
 
 </div>
 <div ng-controller="noteCtrl" class="modal-footer">
+	<button class="button button-clear button-positive">{{fecha(StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].fecha)}}</button>
     <button class="btn btn-primary" ng-click="StpaModalCtrl.accept()">atras</button>
     <button class="btn btn-warning" ng-click="deleteNota({{StpaModalCtrl.scope[1]}},{{StpaModalCtrl.scope[0].id}})">Borrar</button>
 </div>

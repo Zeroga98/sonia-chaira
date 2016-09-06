@@ -3,14 +3,37 @@ var app = angular.module('starter', [
   'satellizer',
   'ionic-letter-avatar',
   'stpa.modal',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngCordova'
+
 ]);
-
 //var api_url='http://localhost:9998';
-var api_url= 'http://e9b4b583.ngrok.io';
+var api_url= 'http://b259f093.ngrok.io';
+// var api_url='http://200.21.7.94:9998';
 
-app.run(['$ionicPlatform', function($ionicPlatform) {
+  var config = {
+    apiKey: "AIzaSyAjvhTGk9wnmQ9kNzILdCzusyZIBF4r7wE",
+    authDomain: "tremolo-b2484.firebaseapp.com",
+    databaseURL: "https://tremolo-b2484.firebaseio.com",
+    storageBucket: "tremolo-b2484.appspot.com",
+  };
+
+try {
+    firebase.initializeApp(config);
+    var fireDB = firebase.database();
+} catch (er) {
+  console.log(er);
+    if(fireDB != undefined){
+        fireDB.ref("disconnectmessage").onDisconnect().set("I disconnected!");
+    }
+}
+
+app.run(['$ionicPlatform', function($ionicPlatform,$cordovaPlugin,$rootScope) {
+  
+ 
+
   $ionicPlatform.ready(function() {
+
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -19,10 +42,12 @@ app.run(['$ionicPlatform', function($ionicPlatform) {
     if (window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+
+
+
       if (cordova.platformId == 'android') {
             StatusBar.backgroundColorByHexString("#387ef5");
-
-
     }
   });
 }])

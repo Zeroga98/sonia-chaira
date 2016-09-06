@@ -1,24 +1,47 @@
 
-<div >
+
   <ion-view view-title="Nota">
-    <ion-content>
+    <ion-content scroll="false" >
       <div class=" list card">
 
         <div class="item item-input-inset">
           <label class="item-input-wrapper">
-              <input ng-model="title" type="text"  placeholder="Titulo">
+              <input  type="text"  ng-model="notas.title" placeholder="Título">
           </label>
         </div>
 
-          <div class="item-input">
-            <textarea ng-model="description" >"hoasdf"</textarea>
+          <div class="item item-input">
+            <textarea ng-model="notas.description" style="height: 80px" placeholder="Descripción"></textarea>
           </div>
         </div>
-        <div class="button-bar">
-  <a class="button button-asertive">cancelar</a>
-  <a class="button"  ng-click="saveNota(title,description)">guardar</a>
-</div>
+  
+      <ion-item class="item-icon-right"  style="text-align:center" ng-click="activeConfig(config)" type="item-text-wrap">
+        <a  class="ion-gear-b " >  Notificame</a>
+
+        <i class="icon ion-chevron-right icon-accessory" ></i>     
+      </ion-item>
+      <div ng-show="config">
+          <label class="item item-input">
+          <span class="input-label">Día</span>
+          <input ng-model="fecha" type="date">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Hora</span>
+          <input type="time" ng-model="time" value="11:45:00" max="24:00:00" min="00:00:00" step="1">
+        </label>
+      </div>
+      
+       <div class=" button-bar">
+          <a class="button button-assertive" ng-click="goback()">CANCELAR</a>
+          <a class="button" ng-click="saveNota(notas.title,notas.description,fecha,time)" ng-disabled="!valid()">ACEPTAR</a>
+          
+      </div>
+      
+     
+
+
     </ion-content>
 
   </ion-view>
-  </div>
+
+

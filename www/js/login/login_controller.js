@@ -1,12 +1,15 @@
 app.controller('loginController', function($scope, $location, $auth, $rootScope,$ionicHistory,$state,$interval) {
 
-
-
   $scope.user = {
     user: "",
     password: ""
   };
 // $cordovaStatusbar.styleHex('#15db0b');
+   $rootScope.help=function(){
+
+      return true;
+
+  };
   var repit = false;
   $scope.loading = false;
   $scope.login = function(user) {
@@ -43,7 +46,7 @@ app.controller('loginController', function($scope, $location, $auth, $rootScope,
         if (error.data!=null) {
         swal({   title: "Fallo!",   text: error.data,   timer: 2000,   showConfirmButton: false });
       }else{
-        swal({   title: "Fallo!",   text: "Servidor esta arisco",   timer: 2000,   showConfirmButton: false });
+        swal({   title: "Fallo!",   text: "Error de conexión",   timer: 2000,   showConfirmButton: false });
       }
 
         //se valida si se fue el internet
