@@ -2,12 +2,11 @@
     <h3 class="modal-title">{{StpaModalCtrl.setting.name}}</h3>
 </div>
 <div class="modal-body my-own-template-class">
-<h3>{{StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].title}}</h3>
-<p>{{StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].description}}</p>
-
+    <h3>{{StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].title}}</h3>
+    <p>{{StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].description}}</p>
 </div>
 <div ng-controller="noteCtrl" class="modal-footer">
-	<button class="button button-clear button-positive">{{fecha(StpaModalCtrl.scope[0].notes.notes[StpaModalCtrl.scope[1]].fecha)}}</button>
+    </button>
     <button class="btn btn-primary" ng-click="StpaModalCtrl.accept()">atras</button>
     <button class="btn btn-warning" ng-click="deleteNota({{StpaModalCtrl.scope[1]}},{{StpaModalCtrl.scope[0].id}})">Borrar</button>
 </div>
